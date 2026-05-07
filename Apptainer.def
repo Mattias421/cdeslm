@@ -9,12 +9,14 @@ From: ghcr.io/nvidia/jax:equinox
   pip install diffrax
 
   # Install system dependencies
+  apt-get install -y --no-install-recommends ffmpeg libavutil-dev libavcodec-dev libavformat-dev 
     apt-get update && apt-get install -y --no-install-recommends \
         espeak-ng \
         libespeak-ng-dev \
         build-essential \
         python3-dev \
     && rm -rf /var/lib/apt/lists/*
+
 
   # Install Python dependencies (torch, matcha requirements, and training deps)
     pip install --no-cache-dir \
