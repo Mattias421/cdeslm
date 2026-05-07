@@ -1,6 +1,5 @@
 Bootstrap: docker
-From: ghcr.io/nvidia/jax:equinox
-
+From: ghcr.io/nvidia/jax:equinox-2025-01-15 
 %labels
   Author: cdetts
   Description: Neural CDE for TTS - LJSpeech feature extraction and training
