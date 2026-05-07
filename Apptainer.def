@@ -50,6 +50,7 @@ From: ghcr.io/nvidia/jax:equinox
         seaborn \
         pyyaml \
         torchcodec \
+        transformers \
 
     pip install numpy==2.4.4
 
