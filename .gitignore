@@ -1,0 +1,36 @@
+logs/
+__pycache__/
+
+# Virtual environments
+.venv/
+# Python bytecode
+*.pyc
+*.pyo
+# Testing & Linting
+.pytest_cache/
+.ruff_cache/
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+# Data & experiment outputs
+exp/
+*.sif  # Apptainer images
+__pycache__/
+*.pyc
+.exp/
+.pytest_cache/
+.ruff_cache/
+.venv/
+.vscode/
+.idea/
+*.sif
+
+# Cython build artifacts
+monotonic_align/build/
+monotonic_align/core.c
+monotonic_align/core.so
+
+# config
+configs/data.yaml

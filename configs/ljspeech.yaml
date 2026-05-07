@@ -1,0 +1,17 @@
+audio:
+  sampling_rate: 24000
+  hop_length: 279
+  n_fft: 1024
+  win_length: 1024
+  num_mels: 80
+  f_min: 0
+  f_max: 12000
+
+model:
+  patch_len: 256
+  num_codebooks: 8
+  hidden_size: 256
+  width_size: 512
+  depth: 1
+  solver: euler
+  dt0: 1

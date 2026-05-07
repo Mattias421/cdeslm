@@ -1,0 +1,63 @@
+Bootstrap: docker
+From: ghcr.io/nvidia/jax:equinox
+
+%labels
+  Author: cdetts
+  Description: Neural CDE for TTS - LJSpeech feature extraction and training
+
+%post
+  pip install diffrax
+
+  # Install system dependencies
+    apt-get update && apt-get install -y --no-install-recommends \
+        espeak-ng \
+        libespeak-ng-dev \
+        build-essential \
+        python3-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+  # Install Python dependencies (torch, matcha requirements, and training deps)
+    pip install --no-cache-dir \
+        torch \
+        torchvision \
+        torchaudio \
+        lightning \
+        torchmetrics \
+        hydra-core==1.3.2 \
+        hydra-colorlog==1.2.0 \
+        hydra-optuna-sweeper==1.2.0 \
+        rootutils \
+        rich \
+        pytest \
+        phonemizer \
+        tensorboard \
+        librosa \
+        Cython \
+        numpy \
+        einops \
+        inflect \
+        Unidecode \
+        scipy \
+        matplotlib \
+        pandas \
+        conformer==0.3.2 \
+        diffusers \
+        notebook \
+        ipywidgets \
+        gradio==3.43.2 \
+        gdown \
+        wget \
+        seaborn \
+        pyyaml \
+        torchcodec \
+
+    pip install numpy==2.4.4
+
+%files
+
+%runscript
+    exec "$@"
+
+%help
+    To rebuild monotonic_align (if needed):
+    python /home/acq22mc/cdetts/setup_monotonic_align.py
